@@ -1,0 +1,24 @@
+{
+    "name": "Al-Fathiha",
+    "label": "Victory Over Victory",
+    "verses":[
+        { 
+            "order": [],
+            "verse": [
+                ["In the name of", "With the name of"],
+                ["God", "Allah"],
+                ["the most gracious", "the most benevolent", "the benevolent"],
+                ["the most merciful", "the most loving", "the merciful"]
+            ]
+        },
+        { 
+            "order": [],
+            "verse": [
+                ["All praises", "All praises and thanks"],
+                ["to God", "For God", "to Allah", "For Allah"],
+                ["the master", "the lord"],
+                ["of the universe", "of the worlds"]
+            ]
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+# Valid
+/src/extensions/**/*
+/e2e/
+**/*.test.*
+scripts/
+/node_modules/**/*
+/build/**/*
+/scripts/**/*
