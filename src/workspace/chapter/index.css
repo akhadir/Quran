@@ -1,0 +1,25 @@
+.verses .verse {
+    display: flex;
+    padding: 10px 0;
+}
+.verses .verse .chapter {
+    font-weight: 600;
+    color: grey;
+    margin-right: 20px;
+    line-height: 36px;
+}
+.verses .verse .text {
+    line-height: 36px;
+    font-size: 0.875rem;
+}
+.verses .verse .text .simp {
+    padding: 0 10px;
+}
+.verse-notes {
+    border-top: 1px solid black;
+    color: grey;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: white;
+}

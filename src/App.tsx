@@ -1,18 +1,27 @@
 import React from 'react';
 import Chapter from './workspace/chapter';
-import './App.css';
+import Notes from './workspace/chapter/notes';
+import './app.css';
+import { chapterContext, ChapterContext } from './workspace/chapter/verse-context';
 
 function App() {
-  return (
-    <div className="App">
-        <header className="App-header">
-            Learn Quran Word by Word
-        </header>
-        <div className="main">
-            <Chapter />
+    const config: ChapterContext = {
+        chapter: 1,
+        notes: {},
+    };
+    return (
+        <div className="App">
+            <header className="App-header">
+                Learn Quran Word by Word
+            </header>
+            <div className="main">
+                <chapterContext.Provider value={config}>
+                    <Chapter />
+                    <Notes />
+                </chapterContext.Provider>
+            </div>
         </div>
-    </div>
-  );
+    );
 }
 
 export default App;
