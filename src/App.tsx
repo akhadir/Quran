@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Chapter from './workspace/chapter';
 import Notes from './workspace/chapter/notes';
 import './app.css';
-import { chapterContext, ChapterContext } from './workspace/chapter/verse-context';
+import { chapterContext, ChapterContext } from './workspace/chapter/chapter-context';
 
-function App() {
+export type AppProps = {
+    chapter?: number;
+    startVerse?: number;
+    totalVerses?: number;
+    path?: any;
+}
+const App: React.FC<AppProps> = (props: any) => {
+    const [notes, setNotes] = useState<{ [id:string]: string[]; }>({});
+    let { chapter, startVerse, totalVerses } = props;
     const config: ChapterContext = {
-        chapter: 1,
-        notes: {},
+        chapter: chapter || 1,
+        startVerse: startVerse || 1,
+        totalVerses,
+        notes,
+        setNotes,
     };
     return (
         <div className="App">
@@ -22,6 +33,6 @@ function App() {
             </div>
         </div>
     );
-}
+};
 
 export default App;

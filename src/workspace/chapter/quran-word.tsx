@@ -1,11 +1,13 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useContext } from 'react';
 import { Button, Menu, MenuItem } from '@material-ui/core';
+import { chapterContext } from './chapter-context';
 export type QuranWordProps = {
     words: string[];
-    key: any;
+    notesKey: string;
 };
 const QuranWord : React.FC<QuranWordProps> = (props: QuranWordProps) => {
-    const { words, key  } = props;
+    const { words, notesKey  } = props;
+    const notesConfig = useContext(chapterContext);
     const len = words.length;
     const [anchorEl, setAnchorEl] = React.useState<Element | undefined>(undefined);
     const handleClick = useCallback((event: any) => {
@@ -21,19 +23,28 @@ const QuranWord : React.FC<QuranWordProps> = (props: QuranWordProps) => {
         setAnchorEl(undefined);
     }, []);
     const text = words[selectedIndex];
+    let noteString: string = notesKey;
+    if (words.length > 1) {
+        const { notes } = notesConfig;
+        if (!notes[noteString]) {
+            notes[noteString] = words;
+            notesConfig.setNotes({ ...notes });
+        }
+    }
+
     return (
         <>
-            {words.length > 1 && 
+            {len > 1 && 
                 <>
                     <Button
-                        aria-controls={`simple-menu-${key}`}
+                        aria-controls={`simple-menu-${notesKey}`}
                         aria-haspopup="true"
                         onClick={handleClick}
                     >
-                        <span>{text}<sub>{len}</sub></span>
+                        <span>{text}<sub>{noteString}</sub></span>
                     </Button>
                     <Menu
-                        id={`simple-menu-${key}`}
+                        id={`simple-menu-${notesKey}`}
                         anchorEl={anchorEl}
                         keepMounted
                         open={Boolean(anchorEl)}
