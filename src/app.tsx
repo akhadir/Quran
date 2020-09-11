@@ -17,8 +17,6 @@ const App: React.FC<AppProps> = (props: any) => {
         chapter: chapter || 1,
         startVerse: startVerse || 1,
         totalVerses,
-        notes,
-        setNotes,
     };
     return (
         <div className="App">
@@ -28,7 +26,6 @@ const App: React.FC<AppProps> = (props: any) => {
             <div className="main">
                 <chapterContext.Provider value={config}>
                     <Chapter />
-                    <Notes />
                 </chapterContext.Provider>
             </div>
         </div>

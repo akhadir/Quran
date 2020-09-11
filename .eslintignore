@@ -3,6 +3,7 @@
 /e2e/
 **/*.test.*
 scripts/
+quran-parser/
 /node_modules/**/*
 /build/**/*
 /scripts/**/*
