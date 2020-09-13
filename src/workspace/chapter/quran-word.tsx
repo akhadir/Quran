@@ -1,13 +1,12 @@
-import React, { useCallback, useState, useContext } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Button, Menu, MenuItem } from '@material-ui/core';
-import { chapterContext } from './chapter-context';
+
 export type QuranWordProps = {
     words: string[];
     notesKey: string;
 };
 const QuranWord : React.FC<QuranWordProps> = (props: QuranWordProps) => {
     const { words, notesKey  } = props;
-    const notesConfig = useContext(chapterContext);
     const len = words.length;
     const [anchorEl, setAnchorEl] = React.useState<Element | undefined>(undefined);
     const handleClick = useCallback((event: any) => {
@@ -25,11 +24,11 @@ const QuranWord : React.FC<QuranWordProps> = (props: QuranWordProps) => {
     const text = words[selectedIndex];
     let noteString: string = notesKey;
     if (words.length > 1) {
-        const { notes } = notesConfig;
-        if (!notes[noteString]) {
-            notes[noteString] = words;
-            notesConfig.setNotes({ ...notes });
-        }
+        // const { notes } = notesConfig;
+        // if (!notes[noteString]) {
+        //     notes[noteString] = words;
+        //     notesConfig.setNotes({ ...notes });
+        // }
     }
 
     return (

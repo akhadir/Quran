@@ -38,8 +38,7 @@ const Chapter: React.FC = () => {
         } else {
             out = verse.verse.map(
                 (word: string[], index: number) => {
-                    const indexKey = padZeros(vIndex, 3);
-                    const notesKey = `${key}${indexKey}${index}`;
+                    const notesKey = `${index + 1}`;
                     return <QuranWord words={word} key={notesKey} notesKey={notesKey} />;
                 },
             );

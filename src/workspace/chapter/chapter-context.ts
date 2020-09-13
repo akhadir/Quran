@@ -1,12 +1,12 @@
 import { createContext } from 'react';
 
-export type ChapterContext {
+export type ChapterContext = {
     chapter: number;
     startVerse: number;
-    totalVerses: number | undefined;
+    totalVerses: number;
 }
 export const chapterContext = createContext({
     chapter: 1,
     startVerse: 1,
-    totalVerses: undefined,
+    totalVerses: -1,
 });

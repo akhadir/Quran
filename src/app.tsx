@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Chapter from './workspace/chapter';
-import Notes from './workspace/chapter/notes';
 import './app.css';
 import { chapterContext, ChapterContext } from './workspace/chapter/chapter-context';
 
@@ -11,12 +10,11 @@ export type AppProps = {
     path?: any;
 }
 const App: React.FC<AppProps> = (props: any) => {
-    const [notes, setNotes] = useState<{ [id:string]: string[]; }>({});
     let { chapter, startVerse, totalVerses } = props;
     const config: ChapterContext = {
         chapter: chapter || 1,
         startVerse: startVerse || 1,
-        totalVerses,
+        totalVerses: totalVerses || -1,
     };
     return (
         <div className="App">

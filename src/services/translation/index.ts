@@ -10,7 +10,7 @@ export interface TranslationService {
 export default class TranslationServiceImpl implements TranslationService {
     private httpService = new HttpServiceImpl();
     private parseData(resp: any[], startVerse: number, totalVerses: number | undefined): any[] {
-        if (totalVerses) {
+        if (totalVerses && totalVerses > 0) {
             resp = resp.slice(
                 startVerse - 1, startVerse + totalVerses - 1,
             );
