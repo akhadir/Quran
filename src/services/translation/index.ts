@@ -8,6 +8,7 @@ export interface TranslationService {
 }
 
 export default class TranslationServiceImpl implements TranslationService {
+    
     private httpService = new HttpServiceImpl();
     private parseData(resp: any[], startVerse: number, totalVerses: number | undefined): any[] {
         if (totalVerses && totalVerses > 0) {
@@ -19,7 +20,8 @@ export default class TranslationServiceImpl implements TranslationService {
         }
         return resp;
     }
-    public getChapter(translation: string, chapterNumber: number, startVerse: number = 1, totalVerses?: number): Promise<ChapterInfo> {
+    public getChapter(
+        translation: string, chapterNumber: number, startVerse: number = 1, totalVerses: number = -1): Promise<ChapterInfo> {
         const prom: Promise<ChapterInfo> = new Promise<ChapterInfo>((resolve, reject) => {
             let start: number = startVerse;
             if (typeof startVerse === 'string') {

@@ -2,13 +2,33 @@ import React, { useEffect, useState, useCallback, useContext } from 'react';
 import TranslationServiceImpl from '../../services/translation';
 import { TranslationInfo, ChapterInfo, VerseInfo } from '../../services/translation/translation-types';
 import QuranWord from './quran-word';
-import './index.css';
 import { chapterContext } from './chapter-context';
+import { ServiceManager } from '../../services/pipe/service-manager';
+import { CModelEvent } from '../../services/pipe/chapter-model-observer';
+import './index.css';
+import { VModelEvent } from '../../services/pipe/verse-model-observer';
 
+const servManager = new ServiceManager();
 const Chapter: React.FC = () => {
-    const transService = new TranslationServiceImpl();
     const { chapter, startVerse, totalVerses }  = useContext(chapterContext);
     const [translation] = useState<string>('english');
+    useEffect(() => {
+        servManager.init(
+            {
+                chapterNo: chapter,
+                startVerse,
+                totalVerses,
+                lang: translation,
+            },
+            (evt: CModelEvent) => {
+                console.log('Getting Chapter: ', evt);
+            },
+            (evt: VModelEvent) => {
+                console.log('Getting Verse:', evt);
+            },
+        );
+    }, [chapter, startVerse, totalVerses, translation]);
+    const transService = new TranslationServiceImpl();
     const [transInfo, setTransInfo] = useState<TranslationInfo>();
     const [chapterInfo, setChapterInfo] = useState<ChapterInfo>();
     useEffect(() => {

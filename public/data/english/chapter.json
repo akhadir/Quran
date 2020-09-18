@@ -1,0 +1,605 @@
+[
+    [
+        "Al-Fatiha",
+        "The Opening",
+        "The Opening of the Divine Writ",
+        "The Essence of the Divine Writ",
+        "The Surah of Praise",
+        "The Foundation of the Qur'an"
+    ],
+    [
+        "Al-Baqarah",
+        "The Calf",
+        "The Cow"
+    ],
+    [
+        "Al Imran",
+        "The Family of Imraan",
+        "The House of ʿImrān"
+    ],
+    [
+        "An-Nisa",
+        "The Women"
+    ],
+    [
+        "Al-Ma'idah",
+        "The Food",
+        "The Repast",
+        "The Table"
+    ],
+    [
+        "Al-An'am",
+        "The Cattle"
+    ],
+    [
+        "Al-A'raf",
+        "The Heights",
+        "The Faculty of Discernment"
+    ],
+    [
+        "Al-Anfal",
+        "The Spoils of War"
+    ],
+    [
+        "At-Tawbah",
+        "The Repentance"
+    ],
+    [
+        "Yunus",
+        "Jonah"
+    ],
+    [
+        "Hud",
+        "Hud"
+    ],
+    [
+        "Yusuf",
+        "Joseph"
+    ],
+    [
+        "Ar-Ra'd",
+        "The Thunder"
+    ],
+    [
+        "Ibrahim",
+        "Abraham"
+    ],
+    [
+        "Al-Hijr",
+        "The Rocky Tract",
+        "The Stoneland",
+        "The Rock City",
+        "Al-Hijr"
+    ],
+    [
+        "An-Nahl",
+        "The Honey Bees",
+        "The Bee"
+    ],
+    [
+        "Al-Isra",
+        "The Night Journey"
+    ],
+    [
+        "Al-Kahf",
+        "The Cave"
+    ],
+    [
+        "Maryam",
+        "Mary"
+    ],
+    [
+        "Ta-Ha",
+        "Ṭāʾ Hāʾ (a name of Muhammad)"
+    ],
+    [
+        "Al-Anbiya",
+        "The Prophets"
+    ],
+    [
+        "Al-Hajj",
+        "The Pilgrimage",
+        "The Hajj"
+    ],
+    [
+        "Al-Mu'minun",
+        "The Believers"
+    ],
+    [
+        "An-Nur",
+        "The Light"
+    ],
+    [
+        "Al-Furqan",
+        "The Criterion",
+        "The Standard",
+        "The Standard of True and False"
+    ],
+    [
+        "Ash-Shu'ara",
+        "The Poets"
+    ],
+    [
+        "An-Naml",
+        "The Ant",
+        "The Ants"
+    ],
+    [
+        "Al-Qasas",
+        "The Narrations",
+        "The Stories",
+        "The Story"
+    ],
+    [
+        "Al-Ankabut",
+        "The Spider"
+    ],
+    [
+        "Ar-Rum",
+        "Rome",
+        "Byzantium"
+    ],
+    [
+        "Luqmaan",
+        "Luqman"
+    ],
+    [
+        "As-Sajda",
+        "The Prostration",
+        "Worship",
+        "Adoration"
+    ],
+    [
+        "Al-Ahzaab",
+        "The Clans",
+        "The Confederates",
+        "The Combined Forces"
+    ],
+    [
+        "Saba",
+        "Sheba"
+    ],
+    [
+        "Faatir",
+        "The Originator"
+    ],
+    [
+        "Yaseen",
+        "Yāʾ Sīn (a name of Muhammad)"
+    ],
+    [
+        "As-Saaffaat",
+        "Those Who Set The Ranks",
+        "Drawn Up In Ranks",
+        "Those Ranged in Ranks"
+    ],
+    [
+        "Saad",
+        "Ṣād"
+    ],
+    [
+        "Az-Zumar",
+        "The Crowds",
+        "The Troops",
+        "Throngs"
+    ],
+    [
+        "Ghafir",
+        "The Forgiver (God)",
+        "Forgiving"
+    ],
+    [
+        "Fussilat",
+        "Expounded",
+        "Explained In Detail",
+        "Clearly Spelled Out"
+    ],
+    [
+        "Ash_Shooraa",
+        "The Consultation"
+    ],
+    [
+        "Az-Zukhruf",
+        "The Gold Adornments",
+        "The Ornaments of Gold",
+        "Luxury",
+        "Gold"
+    ],
+    [
+        "Ad-Dukhaan",
+        "The Smoke"
+    ],
+    [
+        "Al-Jaathiyah",
+        "The Kneeling Down",
+        "Crouching"
+    ],
+    [
+        "Al-Ahqaaf",
+        "Winding Sand-tracts",
+        "The Dunes",
+        "The Sand-Dunes"
+    ],
+    [
+        "Muhammad",
+        "Muhammad"
+    ],
+    [
+        "Al-Fath",
+        "The Victory",
+        "Conquest"
+    ],
+    [
+        "Al-Hujuraat",
+        "The Private Apartments",
+        "The Inner Apartments"
+    ],
+    [
+        "Qaaf",
+        "Q̈āf"
+    ],
+    [
+        "Adh-Dhaariyaat",
+        "The Wind That Scatter",
+        "The Winnowing Winds",
+        "The Dust-Scattering Winds"
+    ],
+    [
+        "At-Toor",
+        "The Mount",
+        "Mount Sinai"
+    ],
+    [
+        "An-Najm",
+        "The Star",
+        "The Unfolding"
+    ],
+    [
+        "Al-Qamar",
+        "The Moon"
+    ],
+    [
+        "Ar-Rahman",
+        "The Most Merciful",
+        "The Most Gracious"
+    ],
+    [
+        "Al-Waqi'a",
+        "The Inevitable",
+        "The Event",
+        "That Which Must Come to Pass"
+    ],
+    [
+        "Al-Hadeed",
+        "The Iron"
+    ],
+    [
+        "Al-Mujadila",
+        "The Pleading",
+        "The Pleading Woman"
+    ],
+    [
+        "Al-Hashr",
+        "The Mustering",
+        "The Gathering",
+        "Exile",
+        "Banishment"
+    ],
+    [
+        "Al-Mumtahanah",
+        "The Examined One",
+        "She That Is To Be Examined"
+    ],
+    [
+        "As-Saff",
+        "The Ranks",
+        "Battle Array"
+    ],
+    [
+        "Al-Jumu'ah",
+        "Congregation",
+        "Friday"
+    ],
+    [
+        "Al-Munafiqoon",
+        "The Hypocrites"
+    ],
+    [
+        "At-Taghabun",
+        "The Cheating",
+        "The Mutual Disillusion",
+        "The Mutual Loss and Gain",
+        "Loss and Gain"
+    ],
+    [
+        "At-Talaq",
+        "Divorce"
+    ],
+    [
+        "At-Tahreem",
+        "The Prohibition"
+    ],
+    [
+        "Al-Mulk",
+        "The Dominion",
+        "Sovereignty",
+        "Control"
+    ],
+    [
+        "Al-Qalam",
+        "The Pen"
+    ],
+    [
+        "Al-Haaqqa",
+        "The Sure Reality",
+        "The Laying-Bare of the Truth"
+    ],
+    [
+        "Al-Ma'aarij",
+        "The Ways of Ascent",
+        "The Ascending Stairways"
+    ],
+    [
+        "Nooh",
+        "Noah"
+    ],
+    [
+        "Al-Jinn",
+        "The Jinn",
+        "The Spirits",
+        "The Unseen Beings"
+    ],
+    [
+        "Al-Muzzammil",
+        "The Enfolded One",
+        "The Enshrouded One",
+        "Bundled Up",
+        "The Enwrapped One"
+    ],
+    [
+        "Al-Muddaththir",
+        "The One Wrapped Up",
+        "The Cloaked One",
+        "The Man Wearing A Cloak",
+        "The Enfolded One"
+    ],
+    [
+        "Al-Qiyamah",
+        "Resurrection",
+        "The Day of Resurrection",
+        "Rising Of The Dead"
+    ],
+    [
+        "Al-Insaan",
+        "The Human",
+        "Man"
+    ],
+    [
+        "Al-Mursalaat",
+        "Those Sent Forth",
+        "The Emissaries",
+        "Winds Sent Forth"
+    ],
+    [
+        "An-Naba'",
+        "The Great News",
+        "The Announcement",
+        "The Tiding"
+    ],
+    [
+        "An-Naazi'aat",
+        "Those Who Tear Out",
+        "Those Who Drag Forth",
+        "Soul-snatchers",
+        "Those That Rise"
+    ],
+    [
+        "Abasa",
+        "He Frowned"
+    ],
+    [
+        "At-Takweer",
+        "The Folding Up",
+        "The Overthrowing",
+        "Shrouding in Darkness"
+    ],
+    [
+        "Al-Infitar",
+        "The Cleaving Asunder",
+        "Bursting Apart"
+    ],
+    [
+        "Al-Mutaffifeen",
+        "The Dealers in Fraud",
+        "Defrauding",
+        "The Cheats",
+        "Those Who Give Short Measure"
+    ],
+    [
+        "Al-Inshiqaaq",
+        "The Rending Asunder",
+        "The Sundering",
+        "Splitting Open",
+        "The Splitting Asunder"
+    ],
+    [
+        "Al-Burooj",
+        "The Mansions Of The Stars",
+        "The Constellations",
+        "The Great Constellations"
+    ],
+    [
+        "At-Taariq",
+        "The Night-Visitant",
+        "The Morning Star",
+        "The Nightcomer",
+        "That Which Comes in the Night"
+    ],
+    [
+        "Al-A'laa",
+        "The Most High",
+        "The All-Highest",
+        "Glory To Your Lord In The Highest"
+    ],
+    [
+        "Al-Ghaashiyah",
+        "The Overwhelming Event",
+        "The Overshadowing Event",
+        "The Pall"
+    ],
+    [
+        "Al-Fajr",
+        "The Break of Day",
+        "The Daybreak",
+        "The Dawn"
+    ],
+    [
+        "Al-Balad",
+        "The City",
+        "The Land"
+    ],
+    [
+        "Ash-Shams",
+        "The Sun"
+    ],
+    [
+        "Al-Layl",
+        "The Night"
+    ],
+    [
+        "Ad-Dhuha",
+        "The Glorious Morning Light",
+        "The Forenoon",
+        "Morning Hours",
+        "Morning Bright",
+        "The Bright Morning Hours"
+    ],
+    [
+        "Ash-Sharh",
+        "(Al-Inshirah) The Expansion of Breast",
+        "Solace",
+        "Consolation",
+        "Relief",
+        "Patient",
+        "The Opening-Up of the Heart"
+    ],
+    [
+        "At-Teen",
+        "The Fig Tree",
+        "The Fig"
+    ],
+    [
+        "Al-'Alaq",
+        "The Clinging Clot",
+        "Clot of Blood",
+        "The Germ-Cell"
+    ],
+    [
+        "Al-Qadr",
+        "The Night of Honor",
+        "The Night of Decree",
+        "Power",
+        "Fate",
+        "Destiny"
+    ],
+    [
+        "Al-Bayyinahh",
+        "The Clear Evidence",
+        "The Evidence of the Truth"
+    ],
+    [
+        "Az-Zalzalah",
+        "The Earthquake"
+    ],
+    [
+        "Al-'Aadiyaat",
+        "The Courser",
+        "The Chargers",
+        "The War Horse"
+    ],
+    [
+        "Al-Qaari'ah",
+        "The Striking Hour",
+        "The Great Calamity",
+        "The Stunning Blow",
+        "The Sudden Calamity"
+    ],
+    [
+        "At-Takaathur",
+        "The Piling Up",
+        "Rivalry in World Increase",
+        "Competition",
+        "Greed for More and More"
+    ],
+    [
+        "Al-'Asr",
+        "The Time",
+        "The Declining Day",
+        "The Epoch",
+        "The Flight of Time"
+    ],
+    [
+        "Al-Humazah",
+        "The Scandalmonger",
+        "The Traducer",
+        "The Gossipmonger",
+        "The Slanderer"
+    ],
+    [
+        "Al-Feel",
+        "The Elephant"
+    ],
+    [
+        "Quraysh",
+        "The Quraysh"
+    ],
+    [
+        "Al-Maa'oon",
+        "The Neighbourly Assistance",
+        "Small Kindnesses",
+        "Almsgiving",
+        "Assistance"
+    ],
+    [
+        "Al-Kawthar",
+        "Abundance",
+        "Plenty",
+        "Good in Abundance"
+    ],
+    [
+        "Al-Kaafiroon",
+        "The Disbelievers",
+        "The Kuffar",
+        "Those Who Deny the Truth"
+    ],
+    [
+        "An-Nasr",
+        "The Help",
+        "Divine Support",
+        "Victory",
+        "Succour"
+    ],
+    [
+        "Al-Masad",
+        "The Plaited Rope",
+        "The Palm Fibre",
+        "The Twisted Strands"
+    ],
+    [
+        "Al-Ikhlaas",
+        "Purity of Faith",
+        "The Fidelity",
+        "The Declaration of [God's] Perfection"
+    ],
+    [
+        "Al-Falaq",
+        "The Daybreak",
+        "Dawn",
+        "The Rising Dawn"
+    ],
+    [
+        "Al-Naas",
+        "Mankind",
+        "Men"
+    ]
+]

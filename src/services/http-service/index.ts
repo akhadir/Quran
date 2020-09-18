@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 
 export interface HttpService {
     get(url: string): Promise<any>;
@@ -7,8 +7,13 @@ export interface HttpService {
 
 class HttpServiceImpl implements HttpService {
     private baseURL: string = '/data/';
-
+    private cachedResponse: { [url: string]: any } = {};
     public get(url: string) {
+        if (this.cachedResponse[url]) {
+            return Promise.resolve({
+                data: this.cachedResponse[url],
+            } as AxiosResponse);
+        }
         return axios.get(`${this.baseURL}${url}`)
     }
 
