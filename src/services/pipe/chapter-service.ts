@@ -20,7 +20,7 @@ export class ChapterService implements IQuranModelObserver {
                 data: data[info.chapterNo - 1],
             };
             this.observable.next(model);
-        }).catch(error => {
+        }).catch((error: any) => {
             const model: CModelEvent = {
                 eventType: CModelEventType.INIT,
                 data: [],

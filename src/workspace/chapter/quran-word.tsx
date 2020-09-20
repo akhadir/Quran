@@ -50,7 +50,7 @@ const QuranWord : React.FC<QuranWordProps> = (props: QuranWordProps) => {
                         onClose={handleClose}
                     >
                         {words.map((word: string, index: number) => (
-                            <MenuItem key={word} onClick={() => handleSelect(index)}>{word}</MenuItem>
+                            <MenuItem key={`${word}-${index}`} onClick={() => handleSelect(index)}>{word}</MenuItem>
                         ))}
                     </Menu>
                 </>

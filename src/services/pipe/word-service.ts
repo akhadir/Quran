@@ -48,7 +48,7 @@ export class WordService implements IVerseModelObserver {
                 const rootWord: string = rootWords[verseIndex + startVerse - 2][wordIndex];
                 const wordList: string[] = synonyms[rootWord];
                 const words = [];
-                if (wordList.length > 1) {
+                if (wordList && wordList.length > 1) {
                     words.push(...wordList);
                 }
                 const out: WModelEvent = {

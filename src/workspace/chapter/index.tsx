@@ -1,12 +1,13 @@
 import React, { useEffect, useState, useCallback, useContext } from 'react';
-import TranslationServiceImpl from '../../services/translation';
-import { TranslationInfo, ChapterInfo, VerseInfo } from '../../services/translation/translation-types';
+// import TranslationServiceImpl from '../../services/translation';
+import { ChapterInfo, VerseInfo } from '../../services/translation/translation-types';
 import QuranWord from './quran-word';
 import { chapterContext } from './chapter-context';
 import { ServiceManager } from '../../services/pipe/service-manager';
 import { CModelEvent } from '../../services/pipe/chapter-model-observer';
 import './index.css';
 import { VModelEvent } from '../../services/pipe/verse-model-observer';
+import { WModelEvent } from '../../services/pipe/word-service';
 
 const servManager = new ServiceManager();
 const Chapter: React.FC = () => {
@@ -21,26 +22,48 @@ const Chapter: React.FC = () => {
                 lang: translation,
             },
             (evt: CModelEvent) => {
-                console.log('Getting Chapter: ', evt);
+                // console.log('Getting Chapter: ', evt);
+                const chapterLabel = `${evt.data[0]} - ${evt.data[1]}`;
+                chapterInfo.label = chapterLabel;
+                setChapterInfo({ ...chapterInfo });
             },
             (evt: VModelEvent) => {
-                console.log('Getting Verse:', evt);
+                // console.log('Getting Verse:', evt);
+                const { data } = evt;
+                chapterInfo.verses[data.verseIndex - 1] = {
+                    order: [],
+                    verse: data.verse.map((vers) => [vers]),
+                };
+                setChapterInfo({ ...chapterInfo });
+            },
+            (evt: WModelEvent) => {
+                // console.log('Getting Word:', evt);
+                const { data } = evt;
+                if (chapterInfo.verses[data.verseIndex - 1]) {
+                    chapterInfo.verses[data.verseIndex - 1].verse[data.wordIndex - 1].push(...data.words);
+                }
+                setChapterInfo({ ...chapterInfo });
             },
         );
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [chapter, startVerse, totalVerses, translation]);
-    const transService = new TranslationServiceImpl();
-    const [transInfo, setTransInfo] = useState<TranslationInfo>();
-    const [chapterInfo, setChapterInfo] = useState<ChapterInfo>();
-    useEffect(() => {
-        transService.getTranslationInfo(translation).then((info: TranslationInfo) => {
-            setTransInfo(info);
-        });
-        transService.getChapter(translation, chapter, startVerse, totalVerses)
-            .then((info: ChapterInfo) => {
-            setChapterInfo(info);
-        });
-        // eslint-disable-next-line
-    }, []);
+    // const transService = new TranslationServiceImpl();
+    // const [transInfo, setTransInfo] = useState<TranslationInfo>();
+    const [chapterInfo, setChapterInfo] = useState<ChapterInfo>({
+        label: '',
+        name: '',
+        verses: [],
+    });
+    // useEffect(() => {
+    //     transService.getTranslationInfo(translation).then((info: TranslationInfo) => {
+    //         setTransInfo(info);
+    //     });
+    //     transService.getChapter(translation, chapter, startVerse, totalVerses)
+    //         .then((info: ChapterInfo) => {
+    //         setChapterInfo(info);
+    //     });
+    //     // eslint-disable-next-line
+    // }, []);
     const padZeros = (num: number, places: number) => {
         let zero = places - num.toString().length + 1;
         return Array(+(zero > 0 && zero)).join("0") + num;
@@ -71,7 +94,7 @@ const Chapter: React.FC = () => {
     }
     start = start ? start : 1;
     return (<>
-        {!!(transInfo && chapterInfo) && (
+        {chapterInfo.label && (
             <>
                 <h2>
                     {chapter}. {chapterInfo.label}

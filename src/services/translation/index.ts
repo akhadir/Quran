@@ -35,7 +35,7 @@ export default class TranslationServiceImpl implements TranslationService {
                 let { data } : { data: ChapterInfo } = resp;
                 this.parseData(data.verses, start, total);
                 resolve(data);
-            }).catch(error => {
+            }).catch((error: any) => {
                 console.log(error);
                 const proms: Promise<AxiosResponse>[] = [
                     this.httpService.get(`simple/${translation}/synonyms.json`),

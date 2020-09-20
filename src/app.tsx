@@ -12,9 +12,9 @@ export type AppProps = {
 const App: React.FC<AppProps> = (props: any) => {
     let { chapter, startVerse, totalVerses } = props;
     const config: ChapterContext = {
-        chapter: chapter || 1,
-        startVerse: startVerse || 1,
-        totalVerses: totalVerses || -1,
+        chapter: parseInt(chapter, 10) || 1,
+        startVerse: parseInt(startVerse, 10) || 1,
+        totalVerses: parseInt(totalVerses, 10) || -1,
     };
     return (
         <div className="App">
