@@ -14,7 +14,7 @@ import WorkerTranslationService, { CModelEvent, VModelEvent } from '../../servic
 // const servManager = new ServiceManager();
 const workerServManager = new WorkerTranslationService();
 const Chapter: React.FC = () => {
-    const { chapter, startVerse, totalVerses }  = useContext(chapterContext);
+    const { chapter, startVerse, totalVerses } = useContext(chapterContext);
     const [translation] = useState<string>('english');
     useEffect(() => {
         workerServManager.init(
