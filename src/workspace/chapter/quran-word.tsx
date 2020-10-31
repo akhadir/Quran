@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, memo } from 'react';
 import { Button, Menu, MenuItem } from '@material-ui/core';
 
 export type QuranWordProps = {
@@ -59,4 +59,4 @@ const QuranWord : React.FC<QuranWordProps> = (props: QuranWordProps) => {
         </>
     );
 };
-export default QuranWord;
+export default memo(QuranWord);

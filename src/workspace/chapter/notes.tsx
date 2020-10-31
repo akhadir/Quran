@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { chapterContext } from './chapter-context';
+import React, { memo } from 'react';
+// import { chapterContext } from './chapter-context';
 
 const Notes: React.FC = () => {
     const notes = {};
@@ -15,4 +15,4 @@ const Notes: React.FC = () => {
         </div>
     );
 }
-export default Notes;
+export default memo(Notes);
