@@ -42,8 +42,10 @@ function getAllWords(sura) {
                 process.exit(1);
             }
             return { sura, simple: row.simple, root};
-        })
-        updateRoots(inputArray);
+        });
+        if (inputArray.length) {
+            updateRoots(inputArray);
+        }
     });
 }
 
