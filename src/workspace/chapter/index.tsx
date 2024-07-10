@@ -1,42 +1,25 @@
-import React, { useEffect, useState, useCallback, useContext } from 'react';
+import React, { useEffect, useState, useCallback, useContext, useMemo } from 'react';
 import { ChapterInfo, VerseInfo } from '../../services/translation/translation-types';
 import QuranWord from './quran-word';
 import { chapterContext } from './chapter-context';
+import SwitchService from '../../services/swtich-service';
 import './index.css';
-import WorkerTranslationService, { CModelEvent, VModelEvent } from '../../services/worker';
 
-const workerServManager = new WorkerTranslationService();
 const Chapter: React.FC = () => {
     const { chapter, startVerse, totalVerses } = useContext(chapterContext);
     const [translation] = useState<string>('english');
-    useEffect(() => {
-        workerServManager.init(
-            (evt: VModelEvent) => {
-                const { data } = evt;
-                chapterInfo.verses[data.verseIndex - 1] = {
-                    order: [],
-                    verse: data.verse,
-                };
-                setChapterInfo({ ...chapterInfo });
-            },
-            (evt: CModelEvent) => {
-                const chapterLabel = `${evt.data[0]} - ${evt.data[1]}`;
-                chapterInfo.label = chapterLabel;
-                setChapterInfo({ ...chapterInfo });
-            },
-        );
-        workerServManager.getChapter(translation, chapter, startVerse, totalVerses);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [translation, chapter, startVerse, totalVerses]);
     const [chapterInfo, setChapterInfo] = useState<ChapterInfo>({
         label: '',
         name: '',
         verses: [],
     });
-    const padZeros = (num: number, places: number) => {
+    useEffect(() => {
+       (new SwitchService()).getChapterInfo(translation, chapter, startVerse, totalVerses, setChapterInfo);
+    }, [translation, chapter, startVerse, totalVerses]);
+    const padZeros = useCallback((num: number, places: number) => {
         let zero = places - num.toString().length + 1;
         return Array(+(zero > 0 && zero)).join("0") + num;
-    }
+    }, []);
     const getVerse = useCallback((verse: VerseInfo, vIndex: number) => {
         let out;
         const key = padZeros(chapter, 3);
@@ -56,12 +39,14 @@ const Chapter: React.FC = () => {
             );
         }
         return out;
-    }, [chapter]);
-    let start: any = startVerse;
-    if (typeof start === 'string') {
-        start = parseInt(start);
-    }
-    start = start ? start : 1;
+    }, [chapter, padZeros]);
+    const start: any = useMemo(() => {
+        let startV = startVerse;
+        if (typeof startV === 'string') {
+            startV = parseInt(start);
+        }
+        return startV || 1;
+    }, [startVerse]);
     return (<>
         {chapterInfo.label && (
             <>
