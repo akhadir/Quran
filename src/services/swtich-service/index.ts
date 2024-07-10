@@ -36,18 +36,15 @@ export default class SwitchService {
         this.selectedService = type
         if (this.selectedService === ServiceTypes.INLINE_SERVICE) {
             this.serviceManager = new WorkerTranslationService();
-            this.initInlineService();
         } else {
             this.serviceManager = new WorkerTranslationService();
         }
     }
-    private initInlineService() {
+    public getChapterInfo(translation: string, chapter: number, startVerse: number, totalVerses: number, callback?: (chapterInfo: ChapterInfo) => void) {
         this.serviceManager.init(
             this.defaultDataCallback.bind(this),
             this.defaultLabelCallback.bind(this),
         );
-    }
-    public getChapterInfo(translation: string, chapter: number, startVerse: number, totalVerses: number, callback?: (chapterInfo: ChapterInfo) => void) {
         this.translation = translation;
         if (callback) {
             this.serviceCallback = callback;
