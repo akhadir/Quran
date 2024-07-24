@@ -1,6 +1,7 @@
 import HttpServiceImpl from '../http-service';
 import { TranslationInfo, ChapterInfo } from '../translation/translation-types';
 import { AxiosResponse } from 'axios';
+import { ITranslationService } from './itranslation-service';
 
 export enum VModelEventType {
     INIT = 'INIT',
@@ -25,11 +26,6 @@ enum WorkerEvent {
     INIT = 'INIT',
     FETCH_DATA = 'FETCH_DATA',
 };
-export interface ITranslationService {
-    getChapter(translation: string, chapterNumber: number): Promise<ChapterInfo>;
-    getTranslationInfo(translation: string): Promise<TranslationInfo>
-}
-
 export default class WorkerTranslationService implements ITranslationService {
     private workerService: Worker;
     private httpService = new HttpServiceImpl();
@@ -41,9 +37,9 @@ export default class WorkerTranslationService implements ITranslationService {
         this.workerService.onmessage = this.workerHandler.bind(this);
     }
 
-    public init(verseCB: (evt: VModelEvent) => void, chapterCB: (evt: CModelEvent) => void) {
-        this.verseCB = verseCB;
-        this.chapterCB = chapterCB;
+    public init(dataCallback: (evt: VModelEvent) => void, labelCallback: (evt: CModelEvent) => void) {
+        this.verseCB = dataCallback;
+        this.chapterCB = labelCallback;
     }
 
     private workerHandler(e: { data: any}) {

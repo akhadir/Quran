@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback, useContext, useMemo } from 're
 import { ChapterInfo, VerseInfo } from '../../services/translation/translation-types';
 import QuranWord from './quran-word';
 import { chapterContext } from './chapter-context';
-import SwitchService from '../../services/swtich-service';
+import SwitchService, { ServiceTypes } from '../../services/switch-service';
 import './index.css';
 
 const Chapter: React.FC = () => {
@@ -14,7 +14,7 @@ const Chapter: React.FC = () => {
         verses: [],
     });
     useEffect(() => {
-       (new SwitchService()).getChapterInfo(translation, chapter, startVerse, totalVerses, setChapterInfo);
+       (new SwitchService(ServiceTypes.INLINE_SERVICE)).getChapterInfo(translation, chapter, startVerse, totalVerses, setChapterInfo);
     }, [translation, chapter, startVerse, totalVerses]);
     const padZeros = useCallback((num: number, places: number) => {
         let zero = places - num.toString().length + 1;

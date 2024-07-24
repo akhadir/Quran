@@ -1,5 +1,7 @@
+import { DBTranslationService } from "../db-translation";
 import { ChapterInfo } from "../translation/translation-types";
 import WorkerTranslationService, { CModelEvent, VModelEvent } from "../worker";
+import { ITranslationService } from '../worker/itranslation-service';
 
 export enum ServiceTypes {
     'INLINE_SERVICE',
@@ -13,7 +15,7 @@ export default class SwitchService {
         verses: [],
     };
     private selectedService: ServiceTypes;
-    private serviceManager: WorkerTranslationService;
+    private serviceManager: ITranslationService;
     private serviceCallback: undefined | ((chapterInfo: ChapterInfo) => void);
     private defaultDataCallback (evt: VModelEvent) {
         const { data } = evt;
@@ -37,14 +39,15 @@ export default class SwitchService {
         if (this.selectedService === ServiceTypes.INLINE_SERVICE) {
             this.serviceManager = new WorkerTranslationService();
         } else {
-            this.serviceManager = new WorkerTranslationService();
+            this.serviceManager = new DBTranslationService();
         }
-    }
-    public getChapterInfo(translation: string, chapter: number, startVerse: number, totalVerses: number, callback?: (chapterInfo: ChapterInfo) => void) {
         this.serviceManager.init(
             this.defaultDataCallback.bind(this),
             this.defaultLabelCallback.bind(this),
         );
+    }
+
+    public getChapterInfo(translation: string, chapter: number, startVerse: number, totalVerses: number, callback?: (chapterInfo: ChapterInfo) => void) {
         this.translation = translation;
         if (callback) {
             this.serviceCallback = callback;
